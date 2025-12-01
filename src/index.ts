@@ -1,9 +1,11 @@
 import { Hono } from "hono";
-import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { type } from "arktype";
 import { sValidator } from "@hono/standard-validator";
+import { type } from "arktype";
 import Avatar from "boring-avatars";
+import React from "react";
+
+const PORT = Number(process.env.PORT ?? 3000);
 
 const schema = {
   params: type({
@@ -40,6 +42,6 @@ app.get(
 );
 
 export default {
-  port: 3000,
+  port: PORT,
   fetch: app.fetch,
 };
