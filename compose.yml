@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+        context: .
+    ports: [ "${PORT}:3000" ]
+    env_file:
+      - .env
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "1024M"
+    restart: unless-stopped
