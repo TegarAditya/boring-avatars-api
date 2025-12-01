@@ -2,7 +2,7 @@ services:
   app:
     build:
         context: .
-    ports: [ "${PORT}:3000" ]
+    ports: [ "${PORT:-3000}:3000" ]
     env_file:
       - .env
     environment:
