@@ -5,7 +5,7 @@ import { secureHeaders } from "hono/secure-headers";
 import { renderToStaticMarkup } from "react-dom/server";
 import { sValidator } from "@hono/standard-validator";
 import { type } from "arktype";
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 import Avatar from "boring-avatars";
 import React from "react";
 
@@ -28,7 +28,9 @@ const schema = {
 
 const app = new Hono();
 
-app.use(cors()).use(logger()).use(secureHeaders());
+app.use(cors({ origin: "*" }));
+app.use(logger());
+app.use(secureHeaders());
 
 app.get("/", sValidator("query", schema.query), (c) => {
   const { name, size, variant, colors, square } = c.req.valid("query");
