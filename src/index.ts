@@ -28,9 +28,9 @@ const schema = {
 
 const app = new Hono();
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(logger());
-app.use(secureHeaders());
+app.use(secureHeaders({ crossOriginResourcePolicy: "cross-origin" }));
 
 app.get("/", sValidator("query", schema.query), (c) => {
   const { name, size, variant, colors, square } = c.req.valid("query");
