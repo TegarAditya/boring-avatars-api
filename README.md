@@ -34,7 +34,7 @@ Use the name parameter to generate a unique avatar design. It can be the usernam
 <img src="{CUSTOM_DOMAIN}/?name=Maria%20Mitchell" crossorigin>
 ```
 ### Variant
-Use the variant parameter to change the theme of the avatar. The available variants are: `marble`, `beam`, `pixel`, `sunset`, `ring` and bauhaus.
+Use the variant parameter to change the theme of the avatar. The available variants are: `marble`, `beam`, `pixel`, `sunset`, `ring` and `bauhaus`.
 
 ```html
 <img src="{CUSTOM_DOMAIN}/?variant=beam" crossorigin>
